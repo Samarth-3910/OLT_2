@@ -1,7 +1,8 @@
 def str_rev(s):
     if not s:
         return None
-    return ''.join(reversed(s))
+    return s.lower()[::-1]\
+        if any(c.isupper() for c in s) \
+        else s[::-1]
 
-s = input()
-print(str_rev(s))
+print(str_rev(input()))
